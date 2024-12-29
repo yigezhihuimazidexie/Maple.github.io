@@ -5,50 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ssn资源上传网站</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="path/to/your/icon32.ico" type="image/x-icon">
+    <style>
+        .title {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .title h1 {
+            font-size: 100px;
+            color: cyan;
+        }
+
+        .download-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            left: 550px;
+            top: 70%;
+            transform: translateY(-50%);
+        }
+        .button-text {
+            position: absolute;
+            top: 80%;
+            left: 750px;
+            transform: translate(-50%, 0); 
+            width: 100%;
+            text-align: center;
+        }
+        .button-text p {
+            font-size: 50px;
+            color: cyan;
+        }
+
+        .staff-list-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 70%;
+            right: 550px;
+            transform: translateY(-50%);
+        }
+
+        .staff-list-button-text {
+            position: absolute;
+            top: 82%;
+            right: 750px;
+            transform: translate(50%, 0);
+            width: 100%;
+            text-align: center;
+        }
+
+       .staff-list-button-text p {
+            font-size: 50px;
+            color: cyan;
+        }
+
+    </style>
 </head>
-<body>
-    <h3>以下地址为下载地址</h3>
-    <a href = "https://space.bilibili.com/678127937?spm_id_from=333.1007.0.0">download</a>
-    <h1>点击按钮下载文件</h1>
-    <a href="path/to/your/Scoremark.rar" download>点击下载</a>
+<body style="background-image: url('path/to/your/forest.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+
+    <a href="path/to/your/mods.rar" download>
+        <button class="download-button">
+            <img src="path/to/your/download.png" alt="下载按钮">
+        </button>
+    </a>
+
+    <div class="button-text">
+        <p>下载</p>
+    </div>
+
+    <div class="title">
+        <h1>SSN NEO</h1>
+    </div>
+
+    <a href="people.html" target="_blank">
+        <button class="staff-list-button">
+            <img src="path/to/your/us.png" alt="查看人员名单">
+        </button>
+    </a>
+
+    <div class="staff-list-button-text">
+        <p>人员名单</p>
+    </div>
+
     <div class="container">
         <div class="header">
             <h1>
                 <span class="highlight">Acme</span> Web Design
             </h1>
             <div class="nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-            </div>
-        </div>
-        <div class="showcase">
-            <h1>Affordable Professional Web Design</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
-        </div>
-        <div class="newsletter">
-            <h1>Subscribe To Our Newsletter</h1>
-            <form action="">
-                <input type="email" placeholder="Enter Email...">
-                <button type="submit" class="button_1">Subscribe</button>
-            </form>
-        </div>
-        <div class="boxes">
-            <div class="box">
-                <img src="img/logo_html.png" alt="">
-                <h3>HTML5 Markup</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat.</p>
-            </div>
-            <div class="box">
-                <img src="img/logo_css.png" alt="">
-                <h3>CSS3 Styling</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat.</p>
-            </div>
-            <div class="box">
-                <img src="img/logo_brush.png" alt="">
-                <h3>Graphic Design</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat.</p>
+                <a href="https://space.bilibili.com/678127937?spm_id_from=333.1007.0.0">关于作者</a>
             </div>
         </div>
         <div class="footer">
