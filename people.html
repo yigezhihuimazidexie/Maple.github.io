@@ -7,7 +7,7 @@
     <link rel="icon" href="path/to/your/icon32.ico" type="image/x-icon">
     <title>人员名单</title>
     <style>
-       h1 {
+        h1 {
             color: #333;
             text-align: center; /* 将标题居中显示 */
         }
@@ -26,7 +26,19 @@
         .language-button {
             position: absolute;
             top: 10px;
-            right: 10px;
+            left: 10px; /* 将按钮放在左上角 */
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* 返回按钮样式 */
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 120px; /* 将按钮放在语言切换按钮的右侧 */
             padding: 5px 10px;
             background-color: #333;
             color: #fff;
@@ -38,59 +50,79 @@
 <body style="background-image: url('path/to/your/forest.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
     <h1>人员名单</h1>
     <ul>
-        <ul>
-            <li><a href="https://space.bilibili.com/1184738481?spm_id_from=333.337.0.0">江之</a></li>
-            <li><a href="https://space.bilibili.com/471582773?spm_id_from=333.999.0.0">Skadi3007</a></li>
-            <li><a href="https://space.bilibili.com/675309887?spm_id_from=333.999.0.0">甲鱼</a></li>
-            <li><a href="https://space.bilibili.com/525583392">len</a></li>
-            <li><a href="https://space.bilibili.com/2053776960?spm_id_from=333.337.0.0">之星小罗</a></li>
-            <li><a href="https://space.bilibili.com/1406723">mux</a></li>
-            <li><a href="https://space.bilibili.com/495646399">sus</a></li>
-            <li><a href="https://space.bilibili.com/500803288">正经</a></li>
-            <li><a href="https://space.bilibili.com/678127937?spm_id_from=333.1007.0.0">枫秋</a></li>
-            <li><a>ve引擎制作组</a></li>
-            <li><a href="https://space.bilibili.com/3461572190013717">Bonus-XK</a></li>
-            <li><a href="https://space.bilibili.com/678127937?spm_id_from=333.1007.0.0">枫秋</a></li>
-            <li><a href="https://space.bilibili.com/1311432244">复合肥</a></li>
-            <li><a href="https://space.bilibili.com/1817033215">Rs-Drfeaoer</a></li>
-
-
-        </ul>
+        <li><a href="https://space.bilibili.com/1184738481?spm_id_from=333.337.0.0">江之</a></li>
+        <li><a href="https://space.bilibili.com/471582773?spm_id_from=333.999.0.0">Skadi3007</a></li>
+        <li><a href="https://space.bilibili.com/675309887?spm_id_from=333.999.0.0">甲鱼</a></li>
+        <li><a href="https://space.bilibili.com/525583392">len</a></li>
+        <li><a href="https://space.bilibili.com/2053776960?spm_id_from=333.337.0.0">之星小罗</a></li>
+        <li><a href="https://space.bilibili.com/1406723">mux</a></li>
+        <li><a href="https://space.bilibili.com/495646399">sus</a></li>
+        <li><a href="https://space.bilibili.com/500803288">正经</a></li>
+        <li><a href="https://space.bilibili.com/678127937?spm_id_from=333.1007.0.0">枫秋</a></li>
+        <li><a>ve引擎制作组</a></li>
+        <li><a href="https://space.bilibili.com/3461572190013717">Bonus-XK</a></li>
+        <li><a href="https://space.bilibili.com/678127937?spm_id_from=333.1007.0.0">枫秋</a></li>
+        <li><a href="https://space.bilibili.com/1311432244">复合肥</a></li>
+        <li><a href="https://space.bilibili.com/1817033215">Rs-Drfeaoer</a></li>
     </ul>
     <!-- 语言切换按钮 -->
-    <button class="language-button" onclick="toggleLanguage()">切换语言</button>
+    <select id="language-select" onchange="changeLanguage()" class="language-button">
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+        <option value="ja">日本語</option>
+    </select>
+
+    <!-- 返回按钮 -->
+    <button onclick="window.location.href='https://yigezhihuimazidexie.github.io/Maple.github.io/'" class="back-button">返回</button>
+
 
     <script>
         // 定义一个变量来跟踪当前语言
         let currentLanguage = 'en';
 
         // 切换语言的函数
-        function toggleLanguage() {
-            if (currentLanguage === 'en') {
-                // 如果当前语言是英语，切换到中文
-                currentLanguage = 'zh';
-                document.documentElement.lang = 'zh';
-                // 在这里更新页面上的文本内容为中文
-                document.querySelector('h1').textContent = '人员名单';
-                document.querySelector('ul li:nth-child(1) a').textContent = '江之';
-                document.querySelector('ul li:nth-child(2) a').textContent = 'Skadi3007';
-                document.querySelector('ul li:nth-child(3) a').textContent = '甲鱼';
-                document.querySelector('ul li:nth-child(4) a').textContent = 'len';
-                document.querySelector('ul li:nth-child(5) a').textContent = '之星小罗';
-                document.querySelector('ul li:nth-child(6) a').textContent = 'mux';
-                document.querySelector('ul li:nth-child(7) a').textContent = 'sus';
-                document.querySelector('ul li:nth-child(8) a').textContent = '正经';
-                document.querySelector('ul li:nth-child(9) a').textContent = '枫秋';
-                document.querySelector('ul li:nth-child(10) a').textContent = 've引擎制作组';
-                document.querySelector('ul li:nth-child(11) a').textContent = 'Bonus-XK';
-                document.querySelector('ul li:nth-child(12) a').textContent = '枫秋';
-                document.querySelector('ul li:nth-child(13) a').textContent = '复合肥';
-                document.querySelector('ul li:nth-child(14) a').textContent = 'Rs-Drfeaoer';
-            } else {
-                // 如果当前语言是中文，切换到英语
-                currentLanguage = 'en';
-                document.documentElement.lang = 'en';
-                // 在这里更新页面上的文本内容为英文
+        function changeLanguage() {
+            const select = document.getElementById('language-select');
+            const selectedLanguage = select.value;
+
+            if (selectedLanguage !== currentLanguage) {
+                currentLanguage = selectedLanguage;
+                document.documentElement.lang = currentLanguage;
+
+                // 在这里更新页面上的文本内容
+                if (currentLanguage === 'zh') {
+                    document.querySelector('h1').textContent = '人员名单';
+                    document.querySelector('ul li:nth-child(1) a').textContent = '江之';
+                    document.querySelector('ul li:nth-child(2) a').textContent = 'Skadi3007';
+                    document.querySelector('ul li:nth-child(3) a').textContent = '甲鱼';
+                    document.querySelector('ul li:nth-child(4) a').textContent = 'len';
+                    document.querySelector('ul li:nth-child(5) a').textContent = '之星小罗';
+                    document.querySelector('ul li:nth-child(6) a').textContent = 'mux';
+                    document.querySelector('ul li:nth-child(7) a').textContent = 'sus';
+                    document.querySelector('ul li:nth-child(8) a').textContent = '正经';
+                    document.querySelector('ul li:nth-child(9) a').textContent = '枫秋';
+                    document.querySelector('ul li:nth-child(10) a').textContent = 've引擎制作组';
+                    document.querySelector('ul li:nth-child(11) a').textContent = 'Bonus-XK';
+                    document.querySelector('ul li:nth-child(12) a').textContent = '枫秋';
+                    document.querySelector('ul li:nth-child(13) a').textContent = '复合肥';
+                    document.querySelector('ul li:nth-child(14) a').textContent = 'Rs-Drfeaoer';
+                } else if (currentLanguage === 'ja') {
+                    document.querySelector('h1').textContent = '人員リスト';
+                    document.querySelector('ul li:nth-child(1) a').textContent = '江の';
+                    document.querySelector('ul li:nth-child(2) a').textContent = 'Skadi3007';
+                    document.querySelector('ul li:nth-child(3) a').textContent = '甲魚';
+                    document.querySelector('ul li:nth-child(4) a').textContent = 'len';
+                    document.querySelector('ul li:nth-child(5) a').textContent = '之星小羅';
+                    document.querySelector('ul li:nth-child(6) a').textContent = 'mux';
+                    document.querySelector('ul li:nth-child(7) a').textContent = 'sus';
+                    document.querySelector('ul li:nth-child(8) a').textContent = '正経';
+                    document.querySelector('ul li:nth-child(9) a').textContent = '楓秋';
+                    document.querySelector('ul li:nth-child(10) a').textContent = 'veエンジン制作組';
+                    document.querySelector('ul li:nth-child(11) a').textContent = 'Bonus-XK';
+                    document.querySelector('ul li:nth-child(12) a').textContent = '楓秋';
+                    document.querySelector('ul li:nth-child(13) a').textContent = '複合肥';
+                    document.querySelector('ul li:nth-child(14) a').textContent = 'Rs-Drfeaoer';
+                } else {
                 document.querySelector('h1').textContent = 'People List';
                 document.querySelector('ul li:nth-child(1) a').textContent = 'Jiang Zhi';
                 document.querySelector('ul li:nth-child(2) a').textContent = 'Skadi3007';
@@ -106,8 +138,15 @@
                 document.querySelector('ul li:nth-child(12) a').textContent = 'Feng Qiu';
                 document.querySelector('ul li:nth-child(13) a').textContent = 'Fu He Fei';
                 document.querySelector('ul li:nth-child(14) a').textContent = 'Rs-Drfeaoer';
+                }
             }
+        }
+
+
+        function goBack() {
+            window.history.back();
         }
     </script>
 </body>
 </html>
+
