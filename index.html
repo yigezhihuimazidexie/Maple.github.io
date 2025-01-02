@@ -19,80 +19,94 @@
             color: cyan;
         }
 
-        .download-button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            display: block;
+        .button-container {
+            display: flex;
+            justify-content: space-around;
             position: absolute;
-            left: 550px;
             top: 70%;
-            transform: translateY(-50%);
-        }
-        .button-text {
-            position: absolute;
-            top: 80%;
-            left: 750px;
-            transform: translate(-50%, 0); 
-            width: 100%;
-            text-align: center;
-        }
-        .button-text p {
-            font-size: 50px;
-            color: cyan;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* 根据需要调整容器宽度 */
         }
 
+        .download-button,
         .staff-list-button {
             background-color: transparent;
             border: none;
             cursor: pointer;
             display: block;
-            position: absolute;
-            top: 70%;
-            right: 550px;
-            transform: translateY(-50%);
+            position: relative;
         }
 
-        .staff-list-button-text {
+        .button-text {
             position: absolute;
-            top: 82%;
-            right: 750px;
-            transform: translate(50%, 0);
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
-            text-align: center;
         }
 
-       .staff-list-button-text p {
+        .button-text p {
             font-size: 50px;
             color: cyan;
         }
 
+        /* 适配不同比例的屏幕 */
+        @media screen and (max-aspect-ratio: 16/9) {
+            .button-container {
+                width: 90%; /* 根据需要调整容器宽度 */
+            }
+        }
+
+        @media screen and (min-aspect-ratio: 16/9) {
+            .button-container {
+                width: 70%; /* 根据需要调整容器宽度 */
+            }
+        }
+
+        /* 计算两个按钮的距离 */
+        .button-distance {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .button-distance p {
+            margin: 0;
+        }
     </style>
+
 </head>
 <body style="background-image: url('path/to/your/forest.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
-
-    <a href="path/to/your/mods.rar" download>
-        <button class="download-button">
-            <img src="path/to/your/download.png" alt="下载按钮">
-        </button>
-    </a>
-
-    <div class="button-text">
-        <p>下载</p>
-    </div> 
 
     <div class="title">
         <h1>SSN NEO</h1>
     </div>
 
-    <a href="people.html" target="_blank">
-        <button class="staff-list-button">
-            <img src="path/to/your/us.png" alt="查看人员名单">
-        </button>
-    </a>
+    <div class="button-container">
+        <a href="path/to/your/mods.rar" download>
+            <button class="download-button">
+                <img src="path/to/your/download.png" alt="下载按钮">
+            </button>
+            <div class="button-text" style="position: absolute;top: 75%;left: 200px">
+                <p>下载</p>
+            </div> 
+        </a>
 
-    <div class="staff-list-button-text">
-        <p>人员名单</p>
+        <a href="people.html" target="_blank">
+            <button class="staff-list-button">
+                <img src="path/to/your/us.png" alt="查看人员名单">
+            </button>
+            <div class="button-text">
+                <p>人员名单</p>
+            </div>
+        </a>
+
     </div>
 
     <div class="container">
@@ -108,5 +122,6 @@
             <p>Acme Web Design, Copyright &copy; 2021</p>
         </div>
     </div>
+
 </body>
 </html> 
